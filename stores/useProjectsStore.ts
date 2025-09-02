@@ -30,7 +30,6 @@ export const useProjectsStore = create<ProjectsStore>((set, get) => ({
 
       if (error) throw error;
 
-      // Converter tecnologias de texto para array (se necessário)
       const projectsWithTechArray =
         data?.map((project) => ({
           ...project,
@@ -63,7 +62,6 @@ export const useProjectsStore = create<ProjectsStore>((set, get) => ({
 
       if (error) throw error;
 
-      // Converter tecnologias de texto para array
       const projectWithTechArray = data
         ? {
             ...data,

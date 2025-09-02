@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        cz-shortcut-listen="true"
         className={`${montserrat.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}

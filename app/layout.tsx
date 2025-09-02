@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
@@ -29,6 +30,7 @@ export default function RootLayout({
         cz-shortcut-listen="true"
         className={`${montserrat.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <Header></Header>
         {children}
       </body>
     </html>

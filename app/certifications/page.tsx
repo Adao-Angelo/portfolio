@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Certifications() {
@@ -42,10 +43,18 @@ export default function Certifications() {
   return (
     <div className="min-h-screen bg-dark-custom text-foreground">
       <Header onThemeToggle={toggleTheme} />
-
       <main className="pt-32">
-        <div className="flex flex-col gap-14">
-          <div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col gap-14"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             <h1 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 [&:not(:first-child)]:mt-6">
               Certificações
             </h1>
@@ -53,15 +62,29 @@ export default function Certifications() {
               Minhas certificações concluídas para aprimoramento contínuo em
               desenvolvimento web e tecnologias modernas.
             </p>
-            <div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.08,
+                  },
+                },
+              }}
+            >
               <div className="mt-8 flex flex-col gap-4">
                 {certifications.map((cert, index) => (
-                  <a
+                  <motion.a
                     key={index}
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-black dark:text-white group"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * index }}
                   >
                     <div className="group my-1 flex w-full flex-row items-center text-zinc-800 dark:text-zinc-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 rounded-lg p-2 transition-colors duration-200">
                       <div className="flex flex-col">
@@ -83,14 +106,13 @@ export default function Certifications() {
                         →
                       </span>
                     </div>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </main>
-
       <Footer />
     </div>
   );

@@ -2,7 +2,9 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -28,14 +30,39 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="pt-32">
-        <h1 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300">
-          Adão Ângelo João
-        </h1>
-        <span className="text-sm font-medium text-neutral-500">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300"
+        >
+          <TypeAnimation
+            sequence={[
+              "Adão Ângelo João",
+              2000,
+              "Bem-vindo ao meu portfólio!",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
+        </motion.h1>
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-sm font-medium text-neutral-500"
+        >
           Frontend Developer | UX Designer
-        </span>
+        </motion.span>
 
-        <div className="mt-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-6"
+        >
           <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 [&:not(:first-child)]:mt-6">
             Transformo{" "}
             <span className="transition-all border-b text-neutral-600 duration-500 cursor-default select-none">
@@ -55,7 +82,12 @@ export default function Home() {
           </p>
 
           {/* Experience Section */}
-          <div className="flex flex-col gap-y-5 mt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="flex flex-col gap-y-5 mt-10"
+          >
             <h2 className="text-[15.8px] font-semibold text-neutral-800 dark:text-neutral-300">
               Experiência
             </h2>
@@ -135,14 +167,24 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 pt-4">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 pt-4"
+          >
             Sinta-se à vontade para interagir comigo nas minhas redes sociais. É
             sempre bom conhecer pessoas novas e compartilhar experiências!
-          </p>
+          </motion.p>
 
-          <ul className="w-full items-center justify-end flex gap-3 pt-5">
+          <motion.ul
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="w-full items-center justify-end flex gap-3 pt-5"
+          >
             <li>
               <a
                 className="text-[13.5px] border-b text-neutral-600 dark:text-neutral-400 transition-all duration-500 hover:text-neutral-800 dark:hover:text-neutral-200"
@@ -163,8 +205,8 @@ export default function Home() {
                 LinkedIn
               </a>
             </li>
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </main>
 
       <Footer />

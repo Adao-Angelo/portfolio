@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Projects() {
@@ -74,10 +75,18 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-dark-custom">
       <Header onThemeToggle={toggleTheme} />
-
       <main className="pt-32">
-        <div className="flex flex-col gap-14">
-          <div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col gap-14"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             <h1 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 [&:not(:first-child)]:mt-6">
               Projetos
             </h1>
@@ -104,15 +113,22 @@ export default function Projects() {
               </a>
               .
             </p>
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
               <div className="mt-8 flex flex-col gap-4">
                 {projects.map((project, index) => (
-                  <a
+                  <motion.a
                     key={index}
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-black dark:text-white group"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * index }}
                   >
                     <div className="group my-1 flex w-full flex-row items-center text-zinc-800 dark:text-zinc-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 rounded-lg p-2 transition-colors duration-200">
                       <span className="whitespace-nowrap text-[15px] tracking-tight text-black dark:text-neutral-300">
@@ -132,13 +148,17 @@ export default function Projects() {
                         {project.tech}
                       </span>
                     </div>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
             <h2 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 [&:not(:first-child)]:mt-6">
               Projetos para Clientes
             </h2>
@@ -146,10 +166,14 @@ export default function Projects() {
               Soluções desenvolvidas sob medida para atender às necessidades
               específicas de clientes e empresas.
             </p>
-
             <div className="mt-8">
               {/* Cabeçalho do Projeto */}
-              <div className="mb-6">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mb-6"
+              >
                 <div className="flex w-full flex-row items-center text-zinc-800 dark:text-zinc-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 rounded-lg p-2 transition-colors duration-200">
                   <span className="whitespace-nowrap text-[15px] tracking-tight text-black dark:text-neutral-300 font-semibold">
                     {clientProject.name}
@@ -162,20 +186,30 @@ export default function Projects() {
                 <p className="text-[13px] text-neutral-500 dark:text-neutral-400 mt-2 ml-2">
                   {clientProject.description}
                 </p>
-              </div>
+              </motion.div>
 
               {/* Objetivo */}
-              <div className="mb-6">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="mb-6"
+              >
                 <h3 className="text-[14px] font-medium text-neutral-700 dark:text-neutral-300 mb-3">
                   Objetivo
                 </h3>
                 <p className="text-[13px] leading-6 text-neutral-600 dark:text-neutral-400 ml-2">
                   {clientProject.sections.objective}
                 </p>
-              </div>
+              </motion.div>
 
               {/* Funcionalidades */}
-              <div className="mb-6">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="mb-6"
+              >
                 <h3 className="text-[14px] font-medium text-neutral-700 dark:text-neutral-300 mb-3">
                   Funcionalidades
                 </h3>
@@ -190,12 +224,11 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </main>
-
       <Footer />
     </div>
   );

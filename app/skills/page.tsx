@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaCss3Alt, FaFigma, FaGitAlt, FaHtml5, FaReact } from "react-icons/fa";
 import {
@@ -49,37 +50,64 @@ export default function SkillsPage() {
   return (
     <div className="min-h-screen bg-dark-custom text-foreground">
       <Header onThemeToggle={toggleTheme} />
-
       <main className="pt-32">
-        <div className="text-left mb-12">
-          <h1 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-left mb-12"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 mb-4"
+          >
             Skills
-          </h1>
-          <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 max-w-3xl">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 max-w-3xl"
+          >
             Tecnologias que domino e utilizo no desenvolvimento de soluções
             modernas e escaláveis.
-          </p>
-        </div>
-
+          </motion.p>
+        </motion.div>
         {/* Accordion de Tecnologias */}
-        <div className="flex flex-wrap gap-4 py-8">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.08,
+              },
+            },
+          }}
+          className="flex flex-wrap gap-4 py-8"
+        >
           {technologies.map((tech, index) => {
             const IconComponent = tech.icon;
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
                 className="flex flex-col items-center justify-center p-4 aspect-square w-24 h-24 border border-white/10 backdrop-blur-md rounded-lg hover:border-white/20 transition-all duration-300 hover:scale-105"
               >
                 <IconComponent className="text-2xl text-neutral-400 mb-2" />
                 <span className="text-neutral-300 text-xs font-medium text-center">
                   {tech.name}
                 </span>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </main>
-
       <Footer />
     </div>
   );

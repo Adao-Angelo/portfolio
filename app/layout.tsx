@@ -1,22 +1,22 @@
-import Header from "@/components/Header";
 import type { Metadata } from "next";
-import { JetBrains_Mono, Montserrat } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Adão Ângelo João",
+  title: "Adão Ângelo João - Front-end Developer",
   description:
-    "Web & Mobile Developer passionate about technology and creating solutions that impact lives.",
+    "Front-end developer especializado em TypeScript, Node.js, React.js, Next.js, Nest.js, Tailwind CSS, Figma e UI/UX Design. CEO da Lumina Dev, transformando necessidades em aplicações funcionais.",
 };
 
 export default function RootLayout({
@@ -28,9 +28,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         cz-shortcut-listen="true"
-        className={`${montserrat.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.variable} ${roboto.variable} antialiased`}
       >
-        <Header></Header>
         {children}
       </body>
     </html>

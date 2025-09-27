@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase";
 import { Project, ProjectsState } from "@/types/project";
 import { create } from "zustand";
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface HeaderProps {
@@ -64,36 +65,36 @@ export default function Header({ onThemeToggle }: HeaderProps) {
             <nav className="flex items-center">
               <ul className="flex items-center gap-1 text-sm text-white/90 dark:text-white/80">
                 <li>
-                  <a
+                  <Link
                     className="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-[13px] font-medium"
                     href="/"
                   >
                     index
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-[13px] font-medium"
                     href="/projects"
                   >
                     projetos
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-[13px] font-medium"
                     href="/certifications"
                   >
                     certificações
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-[13px] font-medium"
                     href="/skills"
                   >
                     skills
-                  </a>
+                  </Link>
                 </li>
               </ul>
 
@@ -245,40 +246,40 @@ export default function Header({ onThemeToggle }: HeaderProps) {
             <nav className="flex flex-col items-center space-y-6">
               <ul className="flex flex-col items-center gap-4 text-white/90 dark:text-white/80">
                 <li>
-                  <a
+                  <Link
                     className="block px-6 py-3 rounded-2xl hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-lg font-medium text-center min-w-[160px]"
                     href="/"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     index
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="block px-6 py-3 rounded-2xl hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-lg font-medium text-center min-w-[160px]"
                     href="/projects"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     projetos
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="block px-6 py-3 rounded-2xl hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-lg font-medium text-center min-w-[160px]"
                     href="/certifications"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     certificações
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="block px-6 py-3 rounded-2xl hover:text-white hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 text-lg font-medium text-center min-w-[160px]"
                     href="/skills"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     skills
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

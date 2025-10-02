@@ -1,21 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import ExperienceList from "./_components/ExperienceList";
 
 export default function Home() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    // Check system preference on mount
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-dark-custom text-foreground">
       {/* Main Content */}

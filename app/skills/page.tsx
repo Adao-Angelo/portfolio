@@ -1,30 +1,12 @@
 "use client";
 
-import Header from "@/components/Header";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 import TechnologiesList from "./_components/TechnologiesList";
 
 export default function SkillsPage() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark");
-  };
-
   return (
     <div className="min-h-screen bg-dark-custom text-foreground">
-      <Header onThemeToggle={toggleTheme} />
       <main className="pt-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

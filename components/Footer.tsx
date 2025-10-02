@@ -19,13 +19,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="my-16 flex flex-col items-center justify-between text-neutral-600 dark:text-neutral-400 md:my-14 md:flex-row opacity-50">
+    <footer className="my-16 flex flex-col items-center justify-between text-gray-600 dark:text-gray-400 md:my-14 md:flex-row opacity-50">
       <div className="flex items-center gap-1.5">
         <span className="text-xs">Built by</span>
         <a
           target="_blank"
           href="https://github.com/Adao-Angelo"
-          className="hover:text-tertiary flex h-5 items-center gap-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 pr-1.5 pl-0.5 hover:bg-[#f0f0f0] text-xs transition-colors"
+          className="hover:text-tertiary flex h-5 items-center gap-0.5 rounded-full bg-gray-100 dark:bg-gray-800 pr-1.5 pl-0.5 hover:bg-gray-200 dark:hover:bg-gray-700 text-xs transition-colors"
           rel="noopener noreferrer"
         >
           <Image

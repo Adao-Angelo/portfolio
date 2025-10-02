@@ -18,10 +18,10 @@ export default function Certifications() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h1 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 [&:not(:first-child)]:mt-6">
+            <h1 className="text-[16.5px] font-semibold leading-7 text-gray-800 dark:text-gray-200 [&:not(:first-child)]:mt-6">
               Certifications
             </h1>
-            <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 [&:not(:first-child)]:mt-6">
+            <p className="text-[14.5px] leading-7 text-gray-600 dark:text-gray-400 [&:not(:first-child)]:mt-6">
               My completed certifications for continuous improvement in web
               development and modern technologies.
             </p>

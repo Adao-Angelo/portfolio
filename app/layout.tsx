@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { ThemeScript } from "@/components/ThemeScript";
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
@@ -105,9 +106,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${roboto.variable} antialiased`}>
-        <div className="min-h-screen bg-dark-custom text-foreground">
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <ThemeScript />
+      </head>
+      <body
+        className={`
+          ${inter.variable} 
+          ${roboto.variable} 
+          antialiased 
+          bg-white 
+          dark:bg-gray-950 
+          text-gray-900 
+          dark:text-gray-50 
+          font-sans 
+          px-4 
+          md:px-8 
+          max-w-2xl 
+          mx-auto
+        `}
+      >
+        <div className="min-h-screen">
           <Header />
           {children}
           <Footer />

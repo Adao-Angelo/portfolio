@@ -1,36 +1,25 @@
 @import "tailwindcss";
 
-:root {
-  --background: #09090b;
-  --foreground: #fdfdfd;
-}
+@theme {
+  /* Light mode colors */
+  --color-background: #ffffff;
+  --color-foreground: #111827;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Gray scale for light mode */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Font family */
   --font-sans: var(--font-roboto);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #09090b;
-    --foreground: #fdfdfd;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-roboto), sans-serif;
-  padding: 0 1rem;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding: 0 2rem;
-  }
+  --font-inter: var(--font-inter);
 }
 
 /* Animations of carrousel of skills */
@@ -60,7 +49,20 @@ body {
   animation: scroll-left 30s linear infinite;
 }
 
-/* Background personalized */
-.bg-dark-custom {
-  background-color: #09090b;
+/* Dark mode CSS variables override */
+.dark {
+  --color-background: #09090b;
+  --color-foreground: #f9fafb;
+
+  /* Gray scale for dark mode */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
 }

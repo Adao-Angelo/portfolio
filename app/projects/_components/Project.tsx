@@ -25,8 +25,8 @@ export default function Project({
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.1 * index }}
     >
-      <div className="group my-1 flex w-full flex-row items-center text-zinc-800 dark:text-zinc-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 rounded-lg p-2 transition-colors duration-200">
-        <span className="whitespace-nowrap text-[15px] tracking-tight text-black dark:text-neutral-300">
+      <div className="group my-1 flex w-full flex-row items-center text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900/50 rounded-lg p-2 transition-colors duration-200">
+        <span className="whitespace-nowrap text-[15px] tracking-tight text-gray-900 dark:text-gray-200">
           <span className="inline-block whitespace-pre-wrap">
             <span className="sr-only">{name}</span>
             <span aria-hidden="true">

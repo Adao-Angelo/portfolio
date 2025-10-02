@@ -2,19 +2,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ThemeScript } from "@/components/ThemeScript";
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-ciq5.vercel.app/"),
@@ -111,9 +99,7 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body
-        className={`
-          ${inter.variable} 
-          ${roboto.variable} 
+        className="
           antialiased 
           bg-white 
           dark:bg-gray-950 
@@ -124,7 +110,7 @@ export default function RootLayout({
           md:px-8 
           max-w-2xl 
           mx-auto
-        `}
+        "
       >
         <div className="min-h-screen">
           <Header />

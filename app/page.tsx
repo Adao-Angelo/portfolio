@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import ExperienceList from "./_components/ExperienceList";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -43,7 +44,7 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-sm font-medium text-neutral-500"
         >
-          Frontend Developer | UX Designer
+          Frontend Developer
         </motion.span>
 
         <motion.div
@@ -83,80 +84,7 @@ export default function Home() {
             </h2>
 
             {/* Experience Items */}
-            <div className="flex w-full items-center justify-between group">
-              <div className="flex w-full flex-col">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[13.5px] leading-none text-neutral-800 dark:text-neutral-300">
-                      Frontend Developer & UI Designer
-                    </span>
-                    <div className="relative inline-block">
-                      <div className="rotate-12 cursor-pointer rounded-lg border border-neutral-100 p-1 transition duration-300 hover:rotate-0 dark:border-neutral-700/30">
-                        <div className="w-[18px] h-[18px] bg-purple-100 dark:bg-purple-900 rounded-sm flex items-center justify-center">
-                          <span className="text-[10px] font-bold text-purple-600 dark:text-purple-300">
-                            LD
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <span className="mx-4 h-[1px] flex-grow border-t border-dashed border-neutral-800 opacity-50 dark:border-neutral-400"></span>
-                  <span className="text-[12.5px] leading-none text-neutral-600 dark:text-neutral-400">
-                    2025 - now
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex w-full items-center justify-between group">
-              <div className="flex w-full flex-col">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[13.5px] leading-none text-neutral-800 dark:text-neutral-300">
-                      Full-stack Developer
-                    </span>
-                    <div className="relative inline-block">
-                      <div className="rotate-12 cursor-pointer rounded-lg border border-neutral-100 p-1 transition duration-300 hover:rotate-0 dark:border-neutral-700/30">
-                        <div className="w-[18px] h-[18px] bg-blue-100 dark:bg-blue-900 rounded-sm flex items-center justify-center">
-                          <span className="text-[10px] font-bold text-blue-600 dark:text-blue-300">
-                            NTC
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <span className="mx-4 h-[1px] flex-grow border-t border-dashed border-neutral-800 opacity-50 dark:border-neutral-400"></span>
-                  <span className="text-[12.5px] leading-none text-neutral-600 dark:text-neutral-400">
-                    2023 - now
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex w-full items-center justify-between group">
-              <div className="flex w-full flex-col">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[13.5px] leading-none text-neutral-800 dark:text-neutral-300">
-                      Front-end Developer
-                    </span>
-                    <div className="relative inline-block">
-                      <div className="rotate-12 cursor-pointer rounded-lg border border-neutral-100 p-1 transition duration-300 hover:rotate-0 dark:border-neutral-700/30">
-                        <div className="w-[18px] h-[18px] bg-green-100 dark:bg-green-900 rounded-sm flex items-center justify-center">
-                          <span className="text-[10px] font-bold text-green-600 dark:text-green-300">
-                            HD
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <span className="mx-4 h-[1px] flex-grow border-t border-dashed border-neutral-800 opacity-50 dark:border-neutral-400"></span>
-                  <span className="text-[12.5px] leading-none text-neutral-600 dark:text-neutral-400">
-                    2025
-                  </span>
-                </div>
-              </div>
-            </div>
+            <ExperienceList />
           </motion.div>
 
           <motion.p

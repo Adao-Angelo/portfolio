@@ -1,11 +1,11 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 @theme {
   /* Light mode colors */
   --color-background: #ffffff;
   --color-foreground: #111827;
-  
+
   /* Gray scale for light mode */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
@@ -17,11 +17,13 @@
   --color-gray-700: #374151;
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
-  
+
   /* Font families */
-  --font-sans: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}/* Animations of carrousel of skills */
+  --font-sans: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+} /* Animations of carrousel of skills */
 @keyframes scroll-right {
   0% {
     transform: translateX(-50%);

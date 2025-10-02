@@ -7,14 +7,12 @@ export default function Footer() {
   const [onlineTime, setOnlineTime] = useState(0);
 
   useEffect(() => {
-    // Simular tempo online (em minutos)
     const startTime = Date.now();
     const interval = setInterval(() => {
       const elapsed = Math.floor((Date.now() - startTime) / (1000 * 60));
-      setOnlineTime(elapsed + 15); // Começar com 15 minutos base
-    }, 60000); // Atualizar a cada minuto
+      setOnlineTime(elapsed + 0);
+    }, 60000);
 
-    // Inicializar com tempo base
     setOnlineTime(15);
 
     return () => clearInterval(interval);

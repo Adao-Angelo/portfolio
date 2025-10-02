@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
@@ -14,17 +16,17 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adaoangelo.com"), // Corrige o aviso do Next.js
+  metadataBase: new URL("https://adaoangelo.com"), // Fixes Next.js warning
   title: "Adão Ângelo João - Front-end Developer",
   description:
-    "Front-end developer especializado em TypeScript, Node.js, React.js, Next.js, Nest.js, Tailwind CSS, Figma e UI/UX Design. CEO da Lumina Dev, transformando necessidades em aplicações funcionais.",
+    "Front-end developer specialized in TypeScript, Node.js, React.js, Next.js, Nest.js, Tailwind CSS, Figma and UI/UX Design. CEO of Lumina Dev, transforming needs into functional applications.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Adão Ângelo João - Front-end Developer",
     description:
-      "Transformo necessidades em aplicações reais, evolutivas e funcionais. Desenvolvo sistemas através da minha paixão por tecnologia, contribuindo para soluções inovadoras e eficazes.",
+      "I transform needs into real, evolving and functional applications. I develop systems through my passion for technology, contributing to innovative and effective solutions.",
     url: "https://adaoangelo.com",
     siteName: "Adão Ângelo João Portfolio",
     images: [
@@ -32,17 +34,17 @@ export const metadata: Metadata = {
         url: "/me.jpeg",
         width: 800,
         height: 800,
-        alt: "Adão Ângelo João Foto de Perfil",
+        alt: "Adão Ângelo João Profile Picture",
       },
     ],
-    locale: "pt_BR",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Adão Ângelo João - Front-end Developer",
     description:
-      "Transformo necessidades em aplicações reais, evolutivas e funcionais.",
+      "I transform needs into real, evolving and functional applications.",
     images: ["/me.jpeg"],
   },
 };
@@ -53,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <head>
         <meta property="og:type" content="website" />
         <meta
@@ -62,7 +64,7 @@ export default function RootLayout({
         />
         <meta
           property="og:description"
-          content="Transformo necessidades em aplicações reais, evolutivas e funcionais. Desenvolvo sistemas através da minha paixão por tecnologia, contribuindo para soluções inovadoras e eficazes."
+          content="I transform needs into real, evolving and functional applications. I develop systems through my passion for technology, contributing to innovative and effective solutions."
         />
         <meta property="og:image" content="/me.jpeg" />
         <meta property="og:url" content="https://adaoangelo.com" />
@@ -73,7 +75,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:description"
-          content="Transformo necessidades em aplicações reais, evolutivas e funcionais."
+          content="I transform needs into real, evolving and functional applications."
         />
         <meta name="twitter:image" content="/me.jpeg" />
         <link rel="icon" href="/favicon.ico" />
@@ -82,7 +84,11 @@ export default function RootLayout({
         cz-shortcut-listen="true"
         className={`${inter.variable} ${roboto.variable} antialiased`}
       >
-        {children}
+        <div className="min-h-screen bg-dark-custom text-foreground">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

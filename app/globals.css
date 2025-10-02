@@ -33,7 +33,7 @@ body {
   }
 }
 
-/* Animações do carrossel de skills */
+/* Animations of carrousel of skills */
 @keyframes scroll-right {
   0% {
     transform: translateX(-50%);
@@ -60,7 +60,7 @@ body {
   animation: scroll-left 30s linear infinite;
 }
 
-/* Background personalizado */
+/* Background personalized */
 .bg-dark-custom {
   background-color: #09090b;
 }

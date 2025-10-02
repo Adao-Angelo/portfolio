@@ -1,7 +1,5 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -17,17 +15,8 @@ export default function Home() {
     }
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark");
-  };
-
   return (
     <div className="min-h-screen bg-dark-custom text-foreground">
-      {/* Fixed Glass Header */}
-      <Header onThemeToggle={toggleTheme} />
-
       {/* Main Content */}
       <main className="pt-32">
         <motion.h1
@@ -40,7 +29,7 @@ export default function Home() {
             sequence={[
               "Adão Ângelo João",
               2000,
-              "Bem-vindo ao meu portfólio!",
+              "Welcome to my portfolio!",
               2000,
             ]}
             wrapper="span"
@@ -64,19 +53,20 @@ export default function Home() {
           className="mt-6"
         >
           <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 [&:not(:first-child)]:mt-6">
-            Transformo{" "}
+            I transform{" "}
             <span className="transition-all border-b text-neutral-600 duration-500 cursor-default select-none">
-              necessidades em aplicações
+              needs into applications
             </span>{" "}
-            reais, evolutivas e funcionais. Desenvolvo sistemas através da minha
-            paixão por tecnologia, contribuindo para soluções inovadoras e
-            eficazes.
+            that are real, evolving and functional. I develop systems through my
+            passion for technology, contributing to innovative and effective
+            solutions.
           </p>
           <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 [&:not(:first-child)]:mt-6">
-            Never stop learning. Vamos construir algo extraordinário juntos!{" "}
+            Never stop learning. Let&apos;s build something extraordinary
+            together!{" "}
             <a href="mailto:adaobegginer@gmail.com" className="inline">
               <span className="transition-all border-b border-dashed border-neutral-900 text-neutral-800 dark:border-neutral-300 dark:text-neutral-400 duration-500 hover:border-gray-300">
-                Entre em contato!
+                Get in touch!
               </span>
             </a>
           </p>
@@ -89,7 +79,7 @@ export default function Home() {
             className="flex flex-col gap-y-5 mt-10"
           >
             <h2 className="text-[15.8px] font-semibold text-neutral-800 dark:text-neutral-300">
-              Experiência
+              Experience
             </h2>
 
             {/* Experience Items */}
@@ -112,7 +102,7 @@ export default function Home() {
                   </div>
                   <span className="mx-4 h-[1px] flex-grow border-t border-dashed border-neutral-800 opacity-50 dark:border-neutral-400"></span>
                   <span className="text-[12.5px] leading-none text-neutral-600 dark:text-neutral-400">
-                    2025 - agora
+                    2025 - now
                   </span>
                 </div>
               </div>
@@ -137,7 +127,7 @@ export default function Home() {
                   </div>
                   <span className="mx-4 h-[1px] flex-grow border-t border-dashed border-neutral-800 opacity-50 dark:border-neutral-400"></span>
                   <span className="text-[12.5px] leading-none text-neutral-600 dark:text-neutral-400">
-                    2023 - agora
+                    2023 - now
                   </span>
                 </div>
               </div>
@@ -175,8 +165,8 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 pt-4"
           >
-            Sinta-se à vontade para interagir comigo nas minhas redes sociais. É
-            sempre bom conhecer pessoas novas e compartilhar experiências!
+            Feel free to interact with me on my social networks. It&apos;s
+            always good to meet new people and share experiences!
           </motion.p>
 
           <motion.ul
@@ -208,8 +198,6 @@ export default function Home() {
           </motion.ul>
         </motion.div>
       </main>
-
-      <Footer />
     </div>
   );
 }

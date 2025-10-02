@@ -1,7 +1,5 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -14,12 +12,6 @@ export default function Certifications() {
       document.documentElement.classList.add("dark");
     }
   }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark");
-  };
 
   const certifications = [
     {
@@ -41,8 +33,7 @@ export default function Certifications() {
   ];
 
   return (
-    <div className="min-h-screen bg-dark-custom text-foreground">
-      <Header onThemeToggle={toggleTheme} />
+    <div>
       <main className="pt-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,11 +47,11 @@ export default function Certifications() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h1 className="text-[16.5px] font-semibold leading-7 text-neutral-800 dark:text-neutral-300 [&:not(:first-child)]:mt-6">
-              Certificações
+              Certifications
             </h1>
             <p className="text-[14.5px] leading-7 text-neutral-600 dark:text-neutral-400 [&:not(:first-child)]:mt-6">
-              Minhas certificações concluídas para aprimoramento contínuo em
-              desenvolvimento web e tecnologias modernas.
+              My completed certifications for continuous improvement in web
+              development and modern technologies.
             </p>
             <motion.div
               initial="hidden"
@@ -113,7 +104,6 @@ export default function Certifications() {
           </motion.div>
         </motion.div>
       </main>
-      <Footer />
     </div>
   );
 }

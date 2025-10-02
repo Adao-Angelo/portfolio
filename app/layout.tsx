@@ -16,36 +16,86 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adaoangelo.com"), // Fixes Next.js warning
-  title: "Adão Ângelo João - Front-end Developer",
+  metadataBase: new URL("https://portfolio-ciq5.vercel.app/"),
+  title: {
+    default: "Adão Ângelo João - Front-end Developer",
+    template: "%s | Adão Ângelo João",
+  },
   description:
     "Front-end developer specialized in TypeScript, Node.js, React.js, Next.js, Nest.js, Tailwind CSS, Figma and UI/UX Design. CEO of Lumina Dev, transforming needs into functional applications.",
-  icons: {
-    icon: "/favicon.ico",
+  keywords: [
+    "Frontend Developer",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Tailwind CSS",
+    "UI/UX Design",
+    "Web Development",
+    "JavaScript",
+    "Lumina Dev",
+  ],
+  authors: [{ name: "Adão Ângelo João" }],
+  creator: "Adão Ângelo João",
+  publisher: "Adão Ângelo João",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
+  icons: {
+    icon: [
+      { url: "/me.jpeg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/me.jpeg", sizes: "16x16", type: "image/jpeg" },
+    ],
+    shortcut: "/me.jpeg",
+    apple: "/me.jpeg",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://portfolio-ciq5.vercel.app/",
+    siteName: "Adão Ângelo João Portfolio",
     title: "Adão Ângelo João - Front-end Developer",
     description:
       "I transform needs into real, evolving and functional applications. I develop systems through my passion for technology, contributing to innovative and effective solutions.",
-    url: "https://adaoangelo.com",
-    siteName: "Adão Ângelo João Portfolio",
     images: [
       {
         url: "/me.jpeg",
-        width: 800,
-        height: 800,
+        width: 1200,
+        height: 630,
         alt: "Adão Ângelo João Profile Picture",
+        type: "image/jpeg",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Adão Ângelo João - Front-end Developer",
     description:
-      "I transform needs into real, evolving and functional applications.",
-    images: ["/me.jpeg"],
+      "I transform needs into real, evolving and functional applications. I develop systems through my passion for technology, contributing to innovative and effective solutions.",
+    images: [
+      {
+        url: "/me.jpeg",
+        alt: "Adão Ângelo João Profile Picture",
+      },
+    ],
+    creator: "@adaoangelo",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "google-site-verification-code",
   },
 };
 
@@ -56,34 +106,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Adão Ângelo João - Front-end Developer"
-        />
-        <meta
-          property="og:description"
-          content="I transform needs into real, evolving and functional applications. I develop systems through my passion for technology, contributing to innovative and effective solutions."
-        />
-        <meta property="og:image" content="/me.jpeg" />
-        <meta property="og:url" content="https://adaoangelo.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Adão Ângelo João - Front-end Developer"
-        />
-        <meta
-          name="twitter:description"
-          content="I transform needs into real, evolving and functional applications."
-        />
-        <meta name="twitter:image" content="/me.jpeg" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body
-        cz-shortcut-listen="true"
-        className={`${inter.variable} ${roboto.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${roboto.variable} antialiased`}>
         <div className="min-h-screen bg-dark-custom text-foreground">
           <Header />
           {children}
